@@ -191,7 +191,10 @@ app = Flask(__name__)
 # Define routes
 @app.route('/')
 def home():
-    return render_template('form.html')
+    return jsonify({
+        "status": "success",
+        "message": "Welcome To Rextra",
+        }), 200
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
